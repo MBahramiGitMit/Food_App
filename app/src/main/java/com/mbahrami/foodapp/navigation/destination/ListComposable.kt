@@ -1,5 +1,6 @@
 package com.mbahrami.foodapp.navigation.destination
 
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -11,6 +12,10 @@ object ListScr
 
 fun NavGraphBuilder.listComposable(navController: NavHostController) {
     composable<ListScr> {
-        ListScreen()
+        ListScreen(
+            listVM = hiltViewModel(),
+            navigateToDetail = { id ->
+                navController.navigate(DetailScr(id = id))
+            })
     }
 }

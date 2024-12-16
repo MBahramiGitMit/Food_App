@@ -8,7 +8,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.mbahrami.foodapp.navigation.SetupNavigation
 import com.mbahrami.foodapp.ui.theme.FoodAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +18,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             navController = rememberNavController()
-            FoodAppTheme {
+            FoodAppTheme(darkTheme = false) {
                 SetupNavigation(navController = navController)
             }
         }

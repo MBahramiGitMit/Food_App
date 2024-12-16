@@ -59,7 +59,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -79,10 +79,15 @@ dependencies {
 
 //Coil
     implementation(libs.coil.compose)
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.4") // Only available on Android/JVM.
+
 
 //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    //OkHTTP client
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
 //Room
     implementation(libs.androidx.room.runtime)
@@ -91,4 +96,7 @@ dependencies {
 
 //Material Icons
     implementation(libs.androidx.material.icons.extended)
+
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+
 }
